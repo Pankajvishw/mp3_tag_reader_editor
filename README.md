@@ -28,15 +28,17 @@ Edit MP3 Tags
 
 ## Tag Codes
 
-Flag	Field
--a	Artist
--t	Title
--A	Album
--y	Year
--m	Genre
--l	Lyricist
--c	Composer
--C	Comments
+| Tag Code | Tag Field | Description                  |
+| -------- | --------- | ---------------------------- |
+| `-a`     | Artist    | Name of the song’s artist    |
+| `-t`     | Title     | Song title                   |
+| `-A`     | Album     | Album name                   |
+| `-y`     | Year      | Year of release              |
+| `-m`     | Genre     | Genre of the song            |
+| `-l`     | Lyricist  | Lyricist name                |
+| `-c`     | Composer  | Composer name                |
+| `-C`     | Comments  | Additional comments or notes |
+
 
 Example (Change Artist name)
 ```bash
@@ -68,4 +70,3 @@ If you want, I can now **finalize your README** so it contains:
 - Both view and edit instructions  
 
 That way it’s GitHub-ready in one go. Do you want me to do that?
-```
