@@ -155,7 +155,7 @@ Status edit_tag(Edit *edit)
         // If the frame matches the one to be edited
         if(strncmp(edit->old_frame_id, edit->frame_id, FRAME_ID_SIZE) == 0)
         {
-            printf("Frame Id found : %s\n", edit->frame_id);
+            printf("INFO: Frame Id found!\n");
             
             // Move file pointer back to size field (4 bytes) before flag (2 bytes) and null (1 byte)
             fseek(edit->fptr_new, -7, SEEK_CUR);
@@ -184,7 +184,7 @@ Status edit_tag(Edit *edit)
     if(replace_old_file(edit->old_fname, edit->new_fname) == e_failure)
         return e_failure;
 
-    printf("Tag Edited Successfully\n");
+    printf("INFO: Tag Edited Successfully\n");
     return e_success;
 }
 
@@ -244,7 +244,7 @@ Status replace_edit_frame_size(Edit *edit)
     if(write_size_to_file(&frame_size, 4, edit->fptr_new) == e_failure)
         return e_failure;
 
-    printf("Old Frame Size Replaced\n");
+    printf("INFO: Old Frame Size Replaced\n");
     return e_success;
 }
 
@@ -270,7 +270,7 @@ Status write_new_frame_data(Edit *edit)
     if(write_data_to_file(edit->new_frame_data, edit->new_frame_size - 1, edit->fptr_new) == e_failure)
         return e_failure;
 
-    printf("Old Frame Data Replaced\n");
+    printf("INFO: Old Frame Data Replaced\n");
     return e_success;
 }
 
@@ -346,7 +346,7 @@ Status copy_remainig_data(Edit *edit)
             return e_failure;
     }
 
-    printf("Remaining Data Copied Successfully\n");
+    printf("INFO: Remaining Data Copied Successfully\n");
     return e_success;
 }
 
